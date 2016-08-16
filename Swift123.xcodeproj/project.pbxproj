@@ -49,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32775F261D62EF57006D1DB2 /* Swift123.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Swift123.playground; sourceTree = "<group>"; };
 		4A3CE9321D58ADC7001E52A4 /* Swift123.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift123.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A3CE9351D58ADC7001E52A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A3CE9371D58ADC7001E52A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 		4A3CE9291D58ADC7001E52A4 = {
 			isa = PBXGroup;
 			children = (
+				32775F261D62EF57006D1DB2 /* Swift123.playground */,
 				4A3CE9341D58ADC7001E52A4 /* Swift123 */,
 				4A3CE9491D58ADC8001E52A4 /* Swift123Tests */,
 				4A3CE9541D58ADC8001E52A4 /* Swift123UITests */,
@@ -531,6 +533,7 @@
 				4A3CE95C1D58ADC8001E52A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4A3CE95D1D58ADC8001E52A4 /* Build configuration list for PBXNativeTarget "Swift123Tests" */ = {
 			isa = XCConfigurationList;
@@ -539,6 +542,7 @@
 				4A3CE95F1D58ADC8001E52A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4A3CE9601D58ADC8001E52A4 /* Build configuration list for PBXNativeTarget "Swift123UITests" */ = {
 			isa = XCConfigurationList;
@@ -547,6 +551,7 @@
 				4A3CE9621D58ADC8001E52A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
