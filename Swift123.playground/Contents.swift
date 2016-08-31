@@ -215,12 +215,112 @@ do {
     
     let d = Pet.TypeB(name:"a", id:10)
     d.toStr()
+}
 
+//: extension
+
+extension String {
+    init(name:String) {
+        self.init()
+        print("hello \(name)")
+    }
+}
+
+let a = String(name: "Hoge")
+
+extension CGRect {
+    var poi:CGFloat {
+        if width > height {
+            return width
+        } else {
+            return height
+        }
+    }
+}
+
+
+let r = CGRect(x: 0, y: 0, width: 100, height: 200)
+let big = r.poi
+
+
+//: CoreFoundation
+//: CFType -> AnyObject
+//: Annotated API  automatically memory managed in Swift
+//: Non annotated API  -> UnManaged<T> .. takeUnretainedValue or takeRetainedValue
+
+
+//: Delegation
+
+protocol SomeDelegate {
+    func hoge()->Int
+}
+
+class MyDelegate : SomeDelegate {
+    func hoge()->Int {
+        print("hello.")
+        return 3
+    }
+}
+
+var m:MyDelegate? = MyDelegate()
+
+if let l = m?.hoge() {
+    print("l=\(l)")
+}
+
+//: KVO
+
+class Target : NSObject {
+    var a = 3
+}
+
+class Observer : NSObject {
+    
+    let t = Target()
+    
+    override init() {
+        super.init()
+        print("init!")
+        t.addObserver(self, forKeyPath: "a", options: .New, context: nil)
+        t.a = 20
+    }
     
     
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        print("observe a == \(change![NSKeyValueChangeNewKey])")
+    }
     
+    func hello()->Int {
+        print("hello")
+        return o.t.a
+    }
+    
+    deinit {
+        t.removeObserver(self, forKeyPath: "a")
+    }
+}
+
+
+let o = Observer()
+o.t.a = 4
+o.t.a = 10
+let x = o.hello()
+
+
+
+//! C
+do {
+    let a:Bool = true
+    let ca:CBool = true
+    let b:Int = 3
+    let cb:CInt = 3
     
 }
+
+
+
+
+
 
 
 
