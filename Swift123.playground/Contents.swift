@@ -71,32 +71,30 @@ do {
     let s3 = [1,2,3].filter({a->Bool in a==1})
     s3 // [1]
     
-    let s4 = [1,2,3].reduce(0, combine:
-        {(a,b) -> Int in
+    let s4 = [1,2,3].reduce(0, {(a,b) -> Int in
             return a + b })
     s4 // 6
     
-    let s5:String = [1,2,3].reduce("start", combine:
-        {(a:String,b:Int) -> String in
+    let s5:String = [1,2,3].reduce("start", {(a:String,b:Int) -> String in
             return a + "\(b)" })
     s5 // "start123"
     
     
-    let s6 = [1,2,3].map({a in a * 2}).filter({a in a >= 4}).reduce(0, combine: {(a,b) in a+b})
+    let s6 = [1,2,3].map({a in a * 2}).filter({a in a >= 4}).reduce(0, {(a,b) in a+b})
     s6
     
     let twice = {a in a*2}
     let over4 = {a in a>=4}
     let sum = {(a:Int,b:Int) in a+b}
     
-    let s7 = [1,2,3].map(twice).filter(over4).reduce(0, combine: sum)
+    let s7 = [1,2,3].map(twice).filter(over4).reduce(0, sum)
     
     let over = {(c:Int) in {(a) in a>=c}}
     over(4)(3) // false
     over(4)(5) // true
     
-    let s8 = [1,2,3].map(twice).filter(over(4)).reduce(0, combine: sum) // 10
-    let s9 = [1,2,3].map(twice).filter(over(1)).reduce(0, combine: sum) // 12
+    let s8 = [1,2,3].map(twice).filter(over(4)).reduce(0, sum) // 10
+    let s9 = [1,2,3].map(twice).filter(over(1)).reduce(0, sum) // 12
     
     
 
@@ -286,7 +284,7 @@ class Observer : NSObject {
     }
     
     
-    override func observeValue(forKeyPath keyPath: String?, of object: AnyObject?, change: [NSKeyValueChangeKey : AnyObject]?, context: UnsafeMutablePointer<Void>?) {
+    func observeValue(forKeyPath keyPath: String?, of object: AnyObject?, change: [NSKeyValueChangeKey : AnyObject]?, context: UnsafeMutableRawPointer) {
         print("observe a == \(change![NSKeyValueChangeKey.newKey])")
     }
     
@@ -314,7 +312,7 @@ do {
     let ca:CBool = true
     let b:Int = 3
     let cb:CInt = 3
-    
+        
 }
 
 
