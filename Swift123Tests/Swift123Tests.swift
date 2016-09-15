@@ -72,6 +72,16 @@ class Swift123Tests: XCTestCase {
         XCTAssert(man!.personID == man1.personID)
     }
     
+    func testObjC() {
+        let r = ObCRecord()
+        let res = r.hello()
+        
+        XCTAssert(res == "hello")
+        
+        let k = plus(3, 4)
+        XCTAssert(k == 7)
+    }
+    
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
