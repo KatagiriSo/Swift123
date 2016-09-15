@@ -10,6 +10,12 @@
 		32F9FADB1D8A38E000009283 /* ObCRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F9FADA1D8A38E000009283 /* ObCRecord.m */; };
 		32F9FADC1D8A38E000009283 /* ObCRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F9FADA1D8A38E000009283 /* ObCRecord.m */; };
 		32F9FADD1D8A38E000009283 /* ObCRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F9FADA1D8A38E000009283 /* ObCRecord.m */; };
+		32F9FAE01D8A3E6000009283 /* CppRecord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32F9FADE1D8A3E6000009283 /* CppRecord.cpp */; };
+		32F9FAE11D8A3E6000009283 /* CppRecord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32F9FADE1D8A3E6000009283 /* CppRecord.cpp */; };
+		32F9FAE21D8A3E6000009283 /* CppRecord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32F9FADE1D8A3E6000009283 /* CppRecord.cpp */; };
+		32F9FAE51D8A3F8200009283 /* CppRecordWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 32F9FAE41D8A3F8200009283 /* CppRecordWrapper.mm */; };
+		32F9FAE61D8A3F8200009283 /* CppRecordWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 32F9FAE41D8A3F8200009283 /* CppRecordWrapper.mm */; };
+		32F9FAE71D8A3F8200009283 /* CppRecordWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 32F9FAE41D8A3F8200009283 /* CppRecordWrapper.mm */; };
 		4A3CE9361D58ADC7001E52A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3CE9351D58ADC7001E52A4 /* AppDelegate.swift */; };
 		4A3CE9381D58ADC7001E52A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3CE9371D58ADC7001E52A4 /* ViewController.swift */; };
 		4A3CE93B1D58ADC7001E52A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A3CE9391D58ADC7001E52A4 /* Main.storyboard */; };
@@ -58,6 +64,10 @@
 		32F9FAD81D8A38E000009283 /* Swift123UITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift123UITests-Bridging-Header.h"; sourceTree = "<group>"; };
 		32F9FAD91D8A38E000009283 /* ObCRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObCRecord.h; sourceTree = "<group>"; };
 		32F9FADA1D8A38E000009283 /* ObCRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObCRecord.m; sourceTree = "<group>"; };
+		32F9FADE1D8A3E6000009283 /* CppRecord.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CppRecord.cpp; sourceTree = "<group>"; };
+		32F9FADF1D8A3E6000009283 /* CppRecord.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CppRecord.hpp; sourceTree = "<group>"; };
+		32F9FAE31D8A3F8200009283 /* CppRecordWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CppRecordWrapper.h; sourceTree = "<group>"; };
+		32F9FAE41D8A3F8200009283 /* CppRecordWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CppRecordWrapper.mm; sourceTree = "<group>"; };
 		4A3CE9321D58ADC7001E52A4 /* Swift123.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift123.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A3CE9351D58ADC7001E52A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A3CE9371D58ADC7001E52A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -135,7 +145,11 @@
 				4A3CE9351D58ADC7001E52A4 /* AppDelegate.swift */,
 				4A3CE9371D58ADC7001E52A4 /* ViewController.swift */,
 				32F9FAD91D8A38E000009283 /* ObCRecord.h */,
+				32F9FAE31D8A3F8200009283 /* CppRecordWrapper.h */,
+				32F9FAE41D8A3F8200009283 /* CppRecordWrapper.mm */,
 				32F9FADA1D8A38E000009283 /* ObCRecord.m */,
+				32F9FADF1D8A3E6000009283 /* CppRecord.hpp */,
+				32F9FADE1D8A3E6000009283 /* CppRecord.cpp */,
 				4A3CE9391D58ADC7001E52A4 /* Main.storyboard */,
 				4A3CE93C1D58ADC7001E52A4 /* Assets.xcassets */,
 				4A3CE93E1D58ADC7001E52A4 /* LaunchScreen.storyboard */,
@@ -300,9 +314,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32F9FAE01D8A3E6000009283 /* CppRecord.cpp in Sources */,
 				4A3CE9741D58CFDB001E52A4 /* HumanStocker.swift in Sources */,
 				32F9FADB1D8A38E000009283 /* ObCRecord.m in Sources */,
 				4A3CE96C1D58B965001E52A4 /* Human.swift in Sources */,
+				32F9FAE51D8A3F8200009283 /* CppRecordWrapper.mm in Sources */,
 				4A3CE9701D58BC56001E52A4 /* HumanManager.swift in Sources */,
 				4A3CE9641D58AE0B001E52A4 /* Swift123.swift in Sources */,
 				4A3CE9681D58B94F001E52A4 /* Message.swift in Sources */,
@@ -315,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32F9FAE11D8A3E6000009283 /* CppRecord.cpp in Sources */,
 				32F9FADC1D8A38E000009283 /* ObCRecord.m in Sources */,
 				4A3CE96D1D58B965001E52A4 /* Human.swift in Sources */,
 				4A3CE9691D58B94F001E52A4 /* Message.swift in Sources */,
@@ -322,6 +339,7 @@
 				4A3CE9711D58BC56001E52A4 /* HumanManager.swift in Sources */,
 				4A3CE94B1D58ADC8001E52A4 /* Swift123Tests.swift in Sources */,
 				4A3CE9751D58CFDB001E52A4 /* HumanStocker.swift in Sources */,
+				32F9FAE61D8A3F8200009283 /* CppRecordWrapper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32F9FAE21D8A3E6000009283 /* CppRecord.cpp in Sources */,
 				32F9FADD1D8A38E000009283 /* ObCRecord.m in Sources */,
 				4A3CE96E1D58B965001E52A4 /* Human.swift in Sources */,
 				4A3CE96A1D58B94F001E52A4 /* Message.swift in Sources */,
@@ -336,6 +355,7 @@
 				4A3CE9721D58BC56001E52A4 /* HumanManager.swift in Sources */,
 				4A3CE9561D58ADC8001E52A4 /* Swift123UITests.swift in Sources */,
 				4A3CE9761D58CFDB001E52A4 /* HumanStocker.swift in Sources */,
+				32F9FAE71D8A3F8200009283 /* CppRecordWrapper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

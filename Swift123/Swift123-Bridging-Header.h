@@ -3,3 +3,4 @@
 //
 
 #import "ObCRecord.h"
+#import "CppRecordWrapper.h"

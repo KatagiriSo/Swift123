@@ -82,6 +82,12 @@ class Swift123Tests: XCTestCase {
         XCTAssert(k == 7)
     }
     
+    func testCpp() {
+        let r = CppRecordWrapper()
+        let res = r.plus(2, and: 5)
+        XCTAssert(res == 7)
+    }
+    
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
