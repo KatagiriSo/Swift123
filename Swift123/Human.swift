@@ -30,7 +30,7 @@ class Human {
         }
     }
     
-    func add(message:Message) {
+    func add(_ message:Message) {
         self.receivedMessages.append(message)
     }
 }

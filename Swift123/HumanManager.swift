@@ -20,13 +20,13 @@ class HumanManager {
     
     private(set) var humanNumber = 0
     
-    class func getID(number:Int)->String {
+    class func getID(_ number:Int)->PersonID {
         return "ID:\(number)"
     }
     
     func newHuman()->Human {
         self.humanNumber = self.humanNumber + 1
-        let personID = self.dynamicType.getID(self.humanNumber)
+        let personID : PersonID = HumanManager.getID(self.humanNumber)
         let human = Human(personID: personID)
         self.stocker.stock(human)
         return human

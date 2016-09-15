@@ -11,11 +11,11 @@ import Foundation
 class HumanStocker {
     private var humanDic:Dictionary<PersonID, Human> = Dictionary()
     
-    func stock(human:Human) {
+    func stock(_ human:Human) {
         self.humanDic[human.personID] = human
     }
     
-    func human(personID:PersonID) -> Human? {
+    func human(_ personID:PersonID) -> Human? {
         return self.humanDic[personID]
     }
 }

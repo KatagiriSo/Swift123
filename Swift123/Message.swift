@@ -10,12 +10,12 @@ import Foundation
 
 class Message {
     let text : String
-    let time : NSDate
+    let time : Date
     let from : PersonID
     let to : [PersonID] = Array()
     init(text:String, from:PersonID) {
         self.text = text
-        self.time = NSDate()
+        self.time = Date()
         self.from = from
     }
 }

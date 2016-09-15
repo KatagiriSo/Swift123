@@ -171,9 +171,9 @@ s.fg()
 do {
     
     enum En1 {
-        case A
-        case B
-        case C
+        case a
+        case b
+        case c
     }
     
     enum En2 : String {
@@ -185,11 +185,11 @@ do {
     En2.A
     En2.A.rawValue // "a"
     
-    let c : En1 = .A
+    let c : En1 = .a
     
-    func sw(a:En1)->String {
+    func sw(_ a:En1)->String {
         switch a {
-        case .A:
+        case .a:
             return "word A"
         default:
             return ""
@@ -200,20 +200,20 @@ do {
     
     
     enum Pet {
-        case TypeA(name:String)
-        case TypeB(name:String, id:Int)
+        case typeA(name:String)
+        case typeB(name:String, id:Int)
         
         func toStr()->String {
             switch self {
-            case .TypeA(name:let name):
+            case .typeA(name:let name):
                 return ("A => \(name)")
-            case .TypeB(name:let name, id:let id):
+            case .typeB(name:let name, id:let id):
                 return ("\(name) \(id)")
             }
         }
     }
     
-    let d = Pet.TypeB(name:"a", id:10)
+    let d = Pet.typeB(name:"a", id:10)
     d.toStr()
 }
 
@@ -281,13 +281,13 @@ class Observer : NSObject {
     override init() {
         super.init()
         print("init!")
-        t.addObserver(self, forKeyPath: "a", options: .New, context: nil)
+        t.addObserver(self, forKeyPath: "a", options: .new, context: nil)
         t.a = 20
     }
     
     
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        print("observe a == \(change![NSKeyValueChangeNewKey])")
+    override func observeValue(forKeyPath keyPath: String?, of object: AnyObject?, change: [NSKeyValueChangeKey : AnyObject]?, context: UnsafeMutablePointer<Void>?) {
+        print("observe a == \(change![NSKeyValueChangeKey.newKey])")
     }
     
     func hello()->Int {
