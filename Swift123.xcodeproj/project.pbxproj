@@ -23,7 +23,6 @@
 		32F9FB0E1D8A483500009283 /* Hello.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F9FB0C1D8A483500009283 /* Hello.m */; };
 		32F9FB0F1D8A483500009283 /* Hello.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F9FB0C1D8A483500009283 /* Hello.m */; };
 		32F9FB211D8A511800009283 /* ObCFrameWorkExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32F9FB201D8A511800009283 /* ObCFrameWorkExample.framework */; };
-		32F9FB301D8A526B00009283 /* libStaticEx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32F9FB2F1D8A526B00009283 /* libStaticEx.a */; };
 		4A3CE9361D58ADC7001E52A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3CE9351D58ADC7001E52A4 /* AppDelegate.swift */; };
 		4A3CE9381D58ADC7001E52A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3CE9371D58ADC7001E52A4 /* ViewController.swift */; };
 		4A3CE93B1D58ADC7001E52A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A3CE9391D58ADC7001E52A4 /* Main.storyboard */; };
@@ -120,7 +119,6 @@
 		32F9FB0C1D8A483500009283 /* Hello.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hello.m; sourceTree = "<group>"; };
 		32F9FB1D1D8A50CA00009283 /* Swift123.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Swift123.xcodeproj; sourceTree = "<group>"; };
 		32F9FB201D8A511800009283 /* ObCFrameWorkExample.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ObCFrameWorkExample.framework; sourceTree = "<group>"; };
-		32F9FB2F1D8A526B00009283 /* libStaticEx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libStaticEx.a; sourceTree = "<group>"; };
 		32F9FB311D8A529100009283 /* StaticEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StaticEx.h; path = StaticEx/StaticEx.h; sourceTree = "<group>"; };
 		4A3CE9321D58ADC7001E52A4 /* Swift123.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift123.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A3CE9351D58ADC7001E52A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -162,7 +160,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32F9FB301D8A526B00009283 /* libStaticEx.a in Frameworks */,
 				32F9FB211D8A511800009283 /* ObCFrameWorkExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,7 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				32F9FB311D8A529100009283 /* StaticEx.h */,
-				32F9FB2F1D8A526B00009283 /* libStaticEx.a */,
 				32F9FB201D8A511800009283 /* ObCFrameWorkExample.framework */,
 				32F9FB1D1D8A50CA00009283 /* Swift123.xcodeproj */,
 			);
