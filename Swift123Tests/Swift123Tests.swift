@@ -88,6 +88,15 @@ class Swift123Tests: XCTestCase {
         XCTAssert(res == 7)
     }
     
+    func testObCFrameWorkExample() {
+        let h = Hello()
+        let res = h.hello()
+        
+        XCTAssert(res == "hello")
+    }
+    
+
+    
     
     func testPerformanceExample() {
         // This is an example of a performance test case.

@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>ObCFrameWorkExample.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>StaticEx.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>Swift123.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +22,21 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>32F9FAEC1D8A47E100009283</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>32F9FAF41D8A47E200009283</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>32F9FB251D8A51DA00009283</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4A3CE9311D58ADC7001E52A4</key>
 		<dict>
 			<key>primary</key>

@@ -1,0 +1,6 @@
+framework module ObCFrameWorkExample {
+  umbrella header "ObCFrameWorkExample.h"
+
+  export *
+  module * { export * }
+}

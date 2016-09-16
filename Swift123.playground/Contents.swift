@@ -269,7 +269,7 @@ if let l = m?.hoge() {
 //: KVO
 
 class Target : NSObject {
-    var a = 3
+    var a : NSInteger = 3
 }
 
 class Observer : NSObject {
@@ -279,12 +279,14 @@ class Observer : NSObject {
     override init() {
         super.init()
         print("init!")
-        t.addObserver(self, forKeyPath: "a", options: .new, context: nil)
+        let s = t.value(forKey: #keyPath(Target.a))
+        print("value \(s)")
+        t.addObserver(self, forKeyPath: #keyPath(Target.a), options: .new, context: nil)
         t.a = 20
     }
     
     
-    func observeValue(forKeyPath keyPath: String?, of object: AnyObject?, change: [NSKeyValueChangeKey : AnyObject]?, context: UnsafeMutableRawPointer) {
+    override func observeValue(forKeyPath keyPath: String?, of: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         print("observe a == \(change![NSKeyValueChangeKey.newKey])")
     }
     
@@ -312,7 +314,7 @@ do {
     let ca:CBool = true
     let b:Int = 3
     let cb:CInt = 3
-        
+    
 }
 
 
