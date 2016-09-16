@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3284FD3F1D8BB36600313BDD /* libLibTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3284FD3E1D8BB36600313BDD /* libLibTest.a */; };
+		3284FD401D8BB36600313BDD /* libLibTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3284FD3E1D8BB36600313BDD /* libLibTest.a */; };
+		3284FD411D8BB36600313BDD /* libLibTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3284FD3E1D8BB36600313BDD /* libLibTest.a */; };
 		32F9FADB1D8A38E000009283 /* ObCRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F9FADA1D8A38E000009283 /* ObCRecord.m */; };
 		32F9FADC1D8A38E000009283 /* ObCRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F9FADA1D8A38E000009283 /* ObCRecord.m */; };
 		32F9FADD1D8A38E000009283 /* ObCRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F9FADA1D8A38E000009283 /* ObCRecord.m */; };
@@ -101,6 +104,8 @@
 
 /* Begin PBXFileReference section */
 		32775F261D62EF57006D1DB2 /* Swift123.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Swift123.playground; sourceTree = "<group>"; };
+		3284FD3E1D8BB36600313BDD /* libLibTest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libLibTest.a; sourceTree = "<group>"; };
+		3284FD421D8BB37800313BDD /* LibTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibTest.h; sourceTree = "<group>"; };
 		32F9FAD61D8A38E000009283 /* Swift123-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift123-Bridging-Header.h"; sourceTree = "<group>"; };
 		32F9FAD71D8A38E000009283 /* Swift123Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift123Tests-Bridging-Header.h"; sourceTree = "<group>"; };
 		32F9FAD81D8A38E000009283 /* Swift123UITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift123UITests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -119,7 +124,6 @@
 		32F9FB0C1D8A483500009283 /* Hello.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hello.m; sourceTree = "<group>"; };
 		32F9FB1D1D8A50CA00009283 /* Swift123.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Swift123.xcodeproj; sourceTree = "<group>"; };
 		32F9FB201D8A511800009283 /* ObCFrameWorkExample.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ObCFrameWorkExample.framework; sourceTree = "<group>"; };
-		32F9FB311D8A529100009283 /* StaticEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StaticEx.h; path = StaticEx/StaticEx.h; sourceTree = "<group>"; };
 		4A3CE9321D58ADC7001E52A4 /* Swift123.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift123.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A3CE9351D58ADC7001E52A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A3CE9371D58ADC7001E52A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32F9FB211D8A511800009283 /* ObCFrameWorkExample.framework in Frameworks */,
+				3284FD3F1D8BB36600313BDD /* libLibTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3284FD401D8BB36600313BDD /* libLibTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3284FD411D8BB36600313BDD /* libLibTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +210,8 @@
 		32F9FB1C1D8A50C900009283 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				32F9FB311D8A529100009283 /* StaticEx.h */,
+				3284FD421D8BB37800313BDD /* LibTest.h */,
+				3284FD3E1D8BB36600313BDD /* libLibTest.a */,
 				32F9FB201D8A511800009283 /* ObCFrameWorkExample.framework */,
 				32F9FB1D1D8A50CA00009283 /* Swift123.xcodeproj */,
 			);
@@ -850,6 +858,10 @@
 				);
 				INFOPLIST_FILE = Swift123Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = rodhos.Swift123Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift123/Swift123Tests-Bridging-Header.h";
@@ -870,6 +882,10 @@
 				);
 				INFOPLIST_FILE = Swift123Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = rodhos.Swift123Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift123/Swift123Tests-Bridging-Header.h";
@@ -889,6 +905,10 @@
 				);
 				INFOPLIST_FILE = Swift123UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = rodhos.Swift123UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift123/Swift123UITests-Bridging-Header.h";
@@ -908,6 +928,10 @@
 				);
 				INFOPLIST_FILE = Swift123UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = rodhos.Swift123UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift123/Swift123UITests-Bridging-Header.h";

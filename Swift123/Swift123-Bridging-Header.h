@@ -5,3 +5,4 @@
 #import "ObCRecord.h"
 #import "CppRecordWrapper.h"
 #import <ObCFrameWorkExample/ObCFrameWorkExample.h>
+#import "LibTest.h"

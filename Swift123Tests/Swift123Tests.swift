@@ -105,6 +105,12 @@ class Swift123Tests: XCTestCase {
         }
     }
     
+    func testLibTest() {
+        let l = LibTest()
+        let r = l.add(2,and:3)
+        
+        XCTAssert(r == 5)
+    }
     
     
 }
