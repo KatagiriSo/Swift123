@@ -12,8 +12,16 @@ protocol Helloable {
     func hello()
 }
 
+protocol Relation {
+    associatedtype Enemy
+    func attack(p:Enemy)
+}
 
-struct Dog : Animal,Helloable {
+
+struct Dog : Animal, Helloable, Relation {
+    
+    typealias Enemy = Cat
+    
     let name:String
     let legs:Int
     let age:Int
@@ -21,15 +29,26 @@ struct Dog : Animal,Helloable {
     func hello() {
         print("bow!")
     }
+    
+    func attack(p: Cat) {
+        print("\(name) -> \(p.name) bow!")
+    }
 }
 
-struct Cat : Animal, Helloable {
+struct Cat : Animal, Helloable, Relation {
+    
+    typealias Enemy = Fish
+    
     let name:String
     let legs:Int
     let age:Int
     
     func hello() {
         print("nyao!")
+    }
+    
+    func attack(p: Fish) {
+        print("\(name) -> \(p.name) nyao!")
     }
 }
 
@@ -43,6 +62,8 @@ seri.hello()
 
 let tama = Cat(name: "Tama", legs: 4, age:5)
 tama.hello()
+
+seri.attack(p: tama)
 
 let kin = Fish(name: "Kin", age:1)
 
