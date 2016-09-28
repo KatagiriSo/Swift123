@@ -105,6 +105,32 @@ func <+> (left:Int, right:Int) -> Int {
 
 let r10 = 2 + 3 <+> 3
 
+precedencegroup MyOPPredence {
+    higherThan: MultiplicationPrecedence
+    associativity: right
+    assignment:true // optional chain
+}
+
+
+infix operator <&>: MyOPPredence
+
+func <&> <T1,T2,T3> ( g:@escaping (T2)->T3, f:@escaping (T1)->T2 ) -> (T1) -> T3 {
+    return {(x:T1) -> T3 in g(f(x))}
+}
+
+func f(x:Int,y:Int) -> Int {
+    return x + y
+}
+
+func g(z:Int) -> Int {
+    return 3*z
+}
+
+let gf = g<&>f
+
+gf((2,3))
+
+
 
 
 
