@@ -56,6 +56,31 @@ default:
     break
 }
 
+enum Math {
+    case num(Int)
+    indirect case add(Math, Math)
+    indirect case prod(Math, Math)
+    func eval(_ exp:Math) -> Int {
+        switch exp {
+        case let .num(v):
+            return v
+        case let .add(l, r):
+            return eval(l) + eval(r)
+        case let .prod(l, r):
+            return eval(l)*eval(r)
+        }
+    }
+    
+    func eval()->Int {
+        return eval(self)
+    }
+}
+
+let siki = Math.add(.num(3), .prod(.num(2), .num(5)))
+let ans = siki.eval()
+
+
+
 
 
 

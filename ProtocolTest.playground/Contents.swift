@@ -82,3 +82,74 @@ animals.forEach { (p:Animal) in
         break
     }
 }
+
+
+protocol Nextable {
+    mutating func next()
+}
+
+enum AnimalEnum : Nextable {
+    case Fish, Amphibia, Reptile
+    
+    mutating func next() {
+        switch self {
+        case .Fish:
+            self = .Amphibia
+        case .Amphibia:
+            self = .Reptile
+        case .Reptile:
+            self = .Reptile
+        }
+    }
+}
+
+var l = AnimalEnum.Fish
+l.next()
+l.next()
+
+protocol InitProtocol {
+    init(x: Int)
+}
+
+class XX : InitProtocol {
+    required init(x: Int) {
+        
+    }
+}
+
+
+protocol Human {
+    func message(human:Human, message:String) -> String
+    func wrap<T>(x:T) -> [T]
+}
+
+
+
+func talk<M1:Any&Human, M2:Human>(m1:M1, m2:M2) -> String where  M2:Any {
+    let r = m1.message(human: m2, message: "hello")
+    return r
+}
+
+struct Japanese : Human {
+    func message(human: Human, message: String) -> String {
+        return "hello2"
+    }
+    
+    func wrap<T>(x: T) -> [T]{
+        return [x,x];
+    }
+}
+
+let m1 = Japanese()
+let m2 = Japanese()
+
+
+let d = talk(m1: m1, m2: m2)
+
+
+
+
+
+
+
+

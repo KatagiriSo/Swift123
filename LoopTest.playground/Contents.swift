@@ -45,7 +45,19 @@ let list2:[[Int]] = [[1],[2],[3]]
 let r7 = list2.flatMap { (ns) in ns[0] }
 print(r7)
 
-
+loopx: for x in [1,2,3] {
+    switch x {
+    case 1:
+        break
+    case 2:
+        print("b")
+        break loopx
+    case 3:
+        print("c")
+    default:
+        break
+    }
+}
 
 
 
