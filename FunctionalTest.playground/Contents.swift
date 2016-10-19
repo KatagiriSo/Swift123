@@ -12,15 +12,13 @@ let flatList = [[1],[2],[3,4]].flatMap { (list:[Int]) -> Int? in
 
 // monad
 
-func unit(x:Int) -> [Int] {
-    return [x]
-}
 
 enum Maybe<U> {
     case Just(U)
     case Nothing
 }
 
+// bind/ >>=
 func bind<U,V>(_ x:Maybe<U>, f:(U) -> Maybe<V>) -> Maybe<V> {
     switch x {
     case .Nothing:
@@ -30,6 +28,12 @@ func bind<U,V>(_ x:Maybe<U>, f:(U) -> Maybe<V>) -> Maybe<V> {
     }
 }
 
+// unit/return
+func unit<U>(_ x:U) -> Maybe<U> {
+    return Maybe.Just(x)
+}
+
+// util1
 func lift<U>(_ f:@escaping (U,U)->U) -> (Maybe<U>, Maybe<U>) -> Maybe<U> {
     
     func mf(mx:Maybe<U>, my:Maybe<U>) -> Maybe<U> {
@@ -43,6 +47,7 @@ func lift<U>(_ f:@escaping (U,U)->U) -> (Maybe<U>, Maybe<U>) -> Maybe<U> {
     return mf
 }
 
+// util2
 func lift<U,V>(_ f:@escaping (U) -> V) -> (Maybe<U>) -> Maybe<V> {
     func mf(mx:Maybe<U>) -> Maybe<V> {
         return bind(mx) {(x:U) -> Maybe<V> in
@@ -54,9 +59,7 @@ func lift<U,V>(_ f:@escaping (U) -> V) -> (Maybe<U>) -> Maybe<V> {
     return mf
 }
 
-func unit<U>(_ x:U) -> Maybe<U> {
-    return Maybe.Just(x)
-}
+
 
 let addm = lift((+) as (Int,Int) -> Int)
 
@@ -122,14 +125,10 @@ let state:State<Int, String> = unit("a")
 
 let (t:String, s:Int) = state(3)
 
-//func bind<S,T1,T2>(_ s:State<S,T1>, f:((S)->T1) -> State<T2,S>) -> State<T2,S> {
-//    
-//    func mf(_ r:Any -> State<T2,S>) {
-//        s
-//    }
-//    
-//
-//}
+func bind<S,T,U>(_ s:State<S,T>, f:((T)->(S)->(U,S)) -> (S) -> (U,S)) {
+    
+}
+
 
 
 

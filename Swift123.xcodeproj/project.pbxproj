@@ -103,7 +103,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		32775F261D62EF57006D1DB2 /* Swift123.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Swift123.playground; sourceTree = "<group>"; };
 		3284FD3E1D8BB36600313BDD /* libLibTest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libLibTest.a; sourceTree = "<group>"; };
 		3284FD421D8BB37800313BDD /* LibTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibTest.h; sourceTree = "<group>"; };
 		32F9FAD61D8A38E000009283 /* Swift123-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift123-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -226,7 +225,6 @@
 		4A3CE9291D58ADC7001E52A4 = {
 			isa = PBXGroup;
 			children = (
-				32775F261D62EF57006D1DB2 /* Swift123.playground */,
 				4A3CE9341D58ADC7001E52A4 /* Swift123 */,
 				4A3CE9491D58ADC8001E52A4 /* Swift123Tests */,
 				4A3CE9541D58ADC8001E52A4 /* Swift123UITests */,

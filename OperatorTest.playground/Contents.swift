@@ -75,17 +75,17 @@ extension CGPoint {
 let r9 = p +- q
 
 /* Precedencegroup see https://developer.apple.com/reference/swift/1851035-swift_standard_library_operators
- BitwiseShift
- Multiplication
- Addition
- Rangeformation
- Casting
- Nil Coalescing
- Comparison
- Logical condjunction
- Logical disjunction
- Ternary
- Assgnment
+ BitwiseShiftPrecedence
+ MultiplicationPrecedence
+ AdditionPrecedence
+ RangeFormationPrecedence
+ CastingPrecedence
+ NilCoalescingPrecedence
+ ComparisonPrecedence
+LogicalConjunctionPrecedence
+LogicalDisjunctionPrecedence, DefaultPrecedence
+ TernaryPrecedence
+ AssignmentPrecedence
 */
 
 precedencegroup MyPredence {
