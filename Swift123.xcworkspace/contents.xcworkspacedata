@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:BasicSwift/BasicSwift.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:FunctionalTest.playground">
+   </FileRef>
+   <FileRef
+      location = "group:MiscTest.playground">
+   </FileRef>
+   <FileRef
+      location = "group:ErrorTest.playground">
+   </FileRef>
+   <FileRef
+      location = "group:SwitchTest.playground">
+   </FileRef>
+   <FileRef
+      location = "group:AttributeTest.playground">
+   </FileRef>
+   <FileRef
+      location = "group:BlockTest.playground">
+   </FileRef>
+   <FileRef
+      location = "group:OperatorTest.playground">
+   </FileRef>
+   <FileRef
+      location = "group:Swift123.playground">
+   </FileRef>
+   <FileRef
+      location = "group:EnumTest.playground">
+   </FileRef>
+   <FileRef
+      location = "group:LoopTest.playground">
+   </FileRef>
+   <FileRef
+      location = "group:ProtocolTest.playground">
+   </FileRef>
+   <FileRef
+      location = "group:Swift123.xcodeproj">
+   </FileRef>
+</Workspace>
