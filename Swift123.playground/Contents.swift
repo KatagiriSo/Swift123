@@ -2,15 +2,27 @@
 
 import Foundation
 
+//: 基本
+
+// doでスコープを区切れる
 do {
-    //: Basic
-    
+
+    // 可変な変数
     var str = "Hello, playground"
+    str = "hoge" // 変更できる
+
+    // 定数
+    let str2 = "Hello"
+//    str2 = "hoge"　// 変更できない
+    
+    // 型を明示的に指定
+    let str3:String = "AAA"
     
     1+1
     
     let a = 3
     
+    // if文は括弧がいらない。
     if a == 3 {
         print("a == \(a)")
     } else {
@@ -37,58 +49,169 @@ do {
     print("a" + "b")
 }
 
+// optional
+do {
+    // optionalは?をつけたものでnilも入れられる
+    var str:String? = nil
+    
+    str = "hoge"
 
-//: scope
+    // ?をとるには!をつける、しかしstrがnilだと落ちる
+    var str2:String = str!
+
+    // nilでないなら{}内が実行される。
+    if let str3 = str {
+        var str4:String = str3
+    }
+
+    // ガード式
+    let a = 3
+    guard a==3 else {
+        
+    }
+
+}
+
+
+// scope
 do {
     let a = 3
-    
+
     do {
         let a = 3
     }
     
 }
 
-//: closure
+// function
+do {
+    func funcA() {
+        print("hello")
+    }
+    funcA()
+    
+    func funcB()->String {
+        return "hello"
+    }
+    let s = funcB()
+    
+    func funcC(x:Int)->Int {
+        return x + 1
+    }
+    
+    let x = funcC(x:4)
+    
+    func funcD(_ x:Int)->Int {
+        return x * 2
+    }
+    
+    let y = funcD(4)
+    
+    func funcE(x:Int) ->(Int)->Int {
+        func funcF(y:Int) -> Int {
+            return x + y
+        }
+        return funcF
+    }
+    
+    let f = funcE(x:4)
+    
+    let r = f(3) // 7
+    
+    let g = funcC
+    let r2 = g(10) // 11
+    
+    func funcG<T>(xs:[T])->Int {
+        return xs.count * 2
+    }
+    
+    
+    
+}
 
+
+// closure = 型つきのラムダ式
 do {
     
+    // 基本の定義の仕方、型を指定する
     let cl = {()->Int in
         return 3
     }
     
-    let d = cl()
+    let cl2 = {3}
     
+    // 使う
+    let d = cl()
+    let d2 = cl2()
+    
+    // 定義してすぐ使う
     let b = {()->Int in
         return 3
     }()
-    
+
+    // mapで使う
     let s1 = [1,2,3].map({a in return 3*a})
     s1 // 3,6,9
     
-    let s2 = [1,2,3].map({a->String in return "\(a)"})
+    // 関数の引数の末尾がクロージャの引数の場合、このような書き方もできる。
+    let s1_1 = [1,2,3].map{a in return 3*a}
+    s1_1 // 3,6,9
+
+    // return の省略
+    let s1_2 = [1,2,3].map{a in 3*a}
+    s1_2 // 3,6,9
+    
+    // 引数の省略
+    let s1_3 = [1,2,3].map{$0*3}
+    s1_3 // 3,6,9
+
+    // 型の指定
+    let s2 = [1,2,3].map{a->String in return "\(a)"}
     s2 // ["1","2","3"]
     
-    let s3 = [1,2,3].filter({a->Bool in a==1})
+    // フィルター
+    let s3 = [1,2,3].filter{a->Bool in a==1}
     s3 // [1]
     
+    // フィルター
+    let s3_1 = [1,2,3].filter{$0==1}
+    s3_1 // [1]
+    
+    // reduce 初期値を指定し次々と計算していく
     let s4 = [1,2,3].reduce(0, {(a,b) -> Int in
             return a + b })
     s4 // 6
     
-    let s5:String = [1,2,3].reduce("start", {(a:String,b:Int) -> String in
-            return a + "\(b)" })
+    // 引数が二つあるクロージャ
+    let s4_1 = [1,2,3].reduce(0){$0 + $1}
+    s4_1 // 6
+
+    // reduceの応用
+    let s5:String = [1,2,3].reduce("start") {(a:String,b:Int) -> String in
+            return a + "\(b)" }
     s5 // "start123"
     
-    
-    let s6 = [1,2,3].map({a in a * 2}).filter({a in a >= 4}).reduce(0, {(a,b) in a+b})
+    // 配列をつなげる
+    let s6 = [1,2,3].map{$0 * 2}.filter{$0 >= 4}.reduce(0){ $0+$1 }
     s6
+
+    // flatmap
+    let s6_1 = [[1,2],[2],[3]].flatMap{ (list:[Int]) -> Int in list.count }
+    s6_1 // [2,1,1]
     
+    // flatmap
+    let s6_2 = [[1,2],[2],[3]].flatMap{(list:[Int]) -> [Int] in list}
+    s6_2 // [1,2,2,3]
+
+    
+    // クロージャを渡して配列を操作する
     let twice = {a in a*2}
     let over4 = {a in a>=4}
     let sum = {(a:Int,b:Int) in a+b}
     
     let s7 = [1,2,3].map(twice).filter(over4).reduce(0, sum)
     
+    // カリー化されたクロージャ
     let over = {(c:Int) in {(a) in a>=c}}
     over(4)(3) // false
     over(4)(5) // true
@@ -102,7 +225,7 @@ do {
 
 
 
-
+// defer 括弧から抜けるときに必ず呼ばれる。
 // call c->b->a
 do {
     defer {
@@ -128,6 +251,11 @@ class Sample {
     let e:String
     let f = Inner()
     
+    enum MyEnum {
+        case a,b,c
+    }
+    
+    // 内部クラス
     class Inner {
         var x:Int = 3
         func d()->Int {
@@ -141,6 +269,12 @@ class Sample {
         e = "e"
     }
     
+    // 破棄時に呼ばれる
+    deinit {
+        
+    }
+    
+    // クラスメソッド
     static func abc()->String {
         return "abc"
     }
@@ -163,9 +297,27 @@ s.de()
 s.d = "dd"
 s.fg()
 
+// genericsを使う
+class MyClass<A,B> {
+    let a:[A]
+    let b:[B]
+    var cl:MyClass<A,B>? = nil
+    init (x:A,y:B,cl:MyClass<A,B>? = nil) {
+        self.a = [x]
+        self.b = [y]
+        self.cl = cl
+    }
+    
+    func funcX<C>(c:MyClass<B,C>) -> Int {
+        return a.count + b.count + c.a.count
+    }
+}
+
+do {
+    let m = MyClass(x: "hoge", y: 3, cl: MyClass(x: "poi", y: 2))
+}
 
 //: enum
-
 do {
     
     enum En1 {
@@ -174,6 +326,7 @@ do {
         case c
     }
     
+    // enumにrawValueを定義
     enum En2 : String {
         case A = "a"
         case B = "b"
@@ -196,7 +349,30 @@ do {
     
     sw(c)
     
+    if case(.a) = c {
+        print("c == .a")
+    }
     
+    switch 5 {
+    case let x where x%5 == 0:
+            print(x)
+    default:
+        break
+    }
+    
+    switch 4 {
+    case 0...3:
+        break
+    case let x as Int:
+        print(x)
+    default:
+        break
+    }
+    
+    
+    
+    
+    // enumに付属型をつける。
     enum Pet {
         case typeA(name:String)
         case typeB(name:String, id:Int)
@@ -216,7 +392,6 @@ do {
 }
 
 //: extension
-
 extension String {
     init(name:String) {
         self.init()
@@ -241,14 +416,28 @@ let r = CGRect(x: 0, y: 0, width: 100, height: 200)
 let big = r.poi
 
 
+// struct 構造体を使う
+struct Vec {
+    let x:Int
+    let y:Int
+    
+    func add(_ v:Vec)->Vec {
+        return Vec(x: x + v.x, y: y + v.y)
+    }
+}
+
+let v = Vec(x: 1, y: 2)
+let v2 = v.add(v)
+
+
+
 //: CoreFoundation
 //: CFType -> AnyObject
 //: Annotated API  automatically memory managed in Swift
 //: Non annotated API  -> UnManaged<T> .. takeUnretainedValue or takeRetainedValue
 
 
-//: Delegation
-
+//: Protocolを使う
 protocol SomeDelegate {
     func hoge()->Int
 }
@@ -265,6 +454,59 @@ var m:MyDelegate? = MyDelegate()
 if let l = m?.hoge() {
     print("l=\(l)")
 }
+
+
+// 関連型を使う
+protocol MyProtocol {
+    associatedtype T
+    associatedtype S
+    func request(x:T) -> S
+}
+
+protocol MyProtocol2 : MyProtocol {
+    func request2(x:S)
+}
+
+protocol DescProtocol {
+    func desc<T>(x:T)->String
+}
+
+protocol CallProtocol {
+    func call()
+}
+
+// 構造体にプロトコルを適用した例
+struct MyStruct<U:DescProtocol&CallProtocol> : MyProtocol2, CallProtocol {
+
+    typealias T = U
+    typealias S = String
+    
+    func request(x: U) -> String {
+        return x.desc(x: "poi")
+    }
+    
+    internal func request2(x: String) {
+        print(x)
+    }
+    
+    func call() {
+        print("hello")
+    }
+    
+    func funcX()->CallProtocol {
+        return self
+    }
+    
+    func funcY<X:CallProtocol>()->X? {
+        return nil
+    }
+    
+    let x:CallProtocol
+    
+    let y:CallProtocol & DescProtocol
+}
+
+
 
 //: KVO
 
